@@ -1,0 +1,9 @@
+# Save this content as: requirements.txt
+streamlit
+langchain-openai
+pydantic
+pypdf
+opencv-python
+numpy
+Pillow
+PyMuPDF
