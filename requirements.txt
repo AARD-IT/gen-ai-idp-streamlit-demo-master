@@ -1,9 +1,9 @@
-# Save this content as: requirements.txt
-streamlit
+streamlit==1.37.0
 langchain-openai
-pydantic
+pydantic==2.12.4
 pypdf
 opencv-python
 numpy
 Pillow
-PyMuPDF
+PyMuPDF==1.23.7
+gitpython
