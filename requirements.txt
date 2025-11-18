@@ -5,5 +5,5 @@ pypdf
 opencv-python
 numpy
 Pillow
-PyMuPDF==1.23.7
+PyMuPDF==1.22.0
 gitpython
