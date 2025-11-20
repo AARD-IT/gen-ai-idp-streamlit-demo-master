@@ -9,7 +9,7 @@ import tempfile
 import streamlit as st
 from pydantic import BaseModel, Field
 from typing import Optional, List, Dict, Any
-from pathlib import Path # ADDED PATHLIB FOR ROBUST PATH HANDLING
+from pathlib import Path 
 import tempfile
 import time
 
@@ -322,29 +322,28 @@ def display_results_in_streamlit(data: Dict[str, Any]):
 
 def main_streamlit_app():
     st.set_page_config(
-        page_title="Gen AI Intelligent Document Processor (IDP)", 
+        page_title="Analytics Avenue - IDP", 
         layout="wide",
     )
     
-    # --- Logo Fix Implemented Here ---
-    LOGO_PATH = Path("assets") / "an_logo.png" # Using Pathlib for robustness
+    # =========================================================================
+    # UPDATED HEADER: Company Logo + Name (Analytics Avenue)
+    # =========================================================================
+    logo_url = "https://raw.githubusercontent.com/Analytics-Avenue/streamlit-dataapp/main/logo.png"
+    st.markdown(f"""
+    <div style="display:flex; align-items:center; margin-bottom:20px;">
+        <img src="{logo_url}" width="60" style="margin-right:10px;">
+        <div style="line-height:1;">
+            <div style="color:#064b86; font-size:36px; font-weight:bold; margin:0;">Analytics Avenue &</div>
+            <div style="color:#064b86; font-size:36px; font-weight:bold; margin:0;">Advanced Analytics</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
-    col_logo, col_title = st.columns([1, 4])
-    with col_logo:
-        try:
-            # Check if the file exists and display it
-            if LOGO_PATH.exists():
-                st.image(str(LOGO_PATH), width=150)
-            else:
-                # If the file path is incorrect, show a warning
-                st.warning("⚠️ Logo file not found at 'assets/straive_logo.png'. Please check the file name and path.")
-        except Exception as e:
-            st.error(f"Logo display error: {e}")
-            
-    with col_title:
-        st.title("🤖 Gen AI Intelligent Document Processor (IDP)")
-        st.subheader("Multi-Modal Document Triage, Extraction, and Verification")
-        
+    # App Specific Title (Kept below branding)
+    st.title("🤖 Gen AI Intelligent Document Processor (IDP)")
+    st.subheader("Multi-Modal Document Triage, Extraction, and Verification")
+    
     st.markdown("---")
     
     # 1. Mode Selection
